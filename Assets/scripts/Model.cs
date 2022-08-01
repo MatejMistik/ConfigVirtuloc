@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-public class Downloader : MonoBehaviour
+public class Model : MonoBehaviour
 {
 
     [SerializeField] Text textHtml;
