@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Element : MonoBehaviour
 {
-    public Application application { get { return GameObject.FindObjectOfType<Application>(); } }
+    public Application application { get { return FindObjectOfType<Application>(); } }
 }
 
 public class Application : MonoBehaviour
@@ -12,6 +12,7 @@ public class Application : MonoBehaviour
     public Model model;
     public View view;
     public Controller controller;
+    public ConfigModel configModel;
 }
 
 

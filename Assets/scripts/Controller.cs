@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using Unity.UI;
 
-public class Controller : MonoBehaviour
+public class Controller : Element
 {
-    // Start is called before the first frame update
-    void Start()
+    /*
+    private void FixedUpdate()
     {
-        
+        application.configModel.xCoordinate.SetText(application.configModel.sliderPositionX.value.ToString("0.00"));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    
+     public void ValueChangeCheck(float value, string coordinate)
+     {
+         Debug.Log(coordinate +"" +  value);
+         coordinate = (value.ToString("0.00"));
+         application.configModel.xCoordinate.SetText(coordinate);
+     }
+    
+    */
 }
