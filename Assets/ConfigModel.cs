@@ -16,12 +16,12 @@ public class ConfigModel : Element
     public Slider sliderPositionX;
     [SerializeField] Slider sliderScale;
 
-    private void Awake()
+    public void Awake()
     {
         sliderPositionX.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
     }
 
-    private void ValueChangeCheck()
+    public void ValueChangeCheck()
     {
 
         xCoordinate.SetText(sliderPositionX.value.ToString("0.00"));

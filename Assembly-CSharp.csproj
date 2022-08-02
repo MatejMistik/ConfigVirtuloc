@@ -57,11 +57,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Controller.cs" />
+    <Compile Include="Assets\ConfigModel.cs" />
     <Compile Include="Assets\scripts\View.cs" />
+    <Compile Include="Assets\Configurator.cs" />
     <Compile Include="Assets\scripts\Application.cs" />
     <Compile Include="Assets\scripts\Model.cs" />
-    <Compile Include="Assets\Configurator.cs" />
-    <Compile Include="Assets\ConfigModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
