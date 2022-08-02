@@ -8,8 +8,8 @@ using UnityEngine.UI;
 public class Model : MonoBehaviour
 {
 
-    [SerializeField] Text textHtml;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    public Text textHtml;
+    public SpriteRenderer spriteRenderer;
     public List<Texture2D> textures = new List<Texture2D>();
     public Texture2D[] texture2DArray;
     // Start is called before the first frame update
