@@ -1,31 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class ConfigModel : Element
 {
-    public TextMeshProUGUI xCoordinate;
-    [SerializeField] TextMeshProUGUI yCoordinate;
-    [SerializeField] TextMeshProUGUI zCoordinate;
+    // Start Data Save
 
-    [SerializeField] TextMeshProUGUI scaleX;
-    [SerializeField] TextMeshProUGUI scaleY;
-
-    public Slider sliderPositionX;
-    [SerializeField] Slider sliderScale;
-
-    public void Awake()
+    private float[] _values;
+    public float[] values
     {
-        sliderPositionX.onValueChanged.AddListener(delegate { ValueChangeCheck(); });
+        get { return _values; }
+        set { _values = value; }
     }
 
-    public void ValueChangeCheck()
+    public void SaveData()
     {
 
-        xCoordinate.SetText(sliderPositionX.value.ToString("0.00"));
     }
-
 }
-

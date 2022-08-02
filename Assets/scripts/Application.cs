@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Element : MonoBehaviour
 {
-    public Application application { get { return FindObjectOfType<Application>(); } }
+    public Application App { get { return FindObjectOfType<Application>(); } }
 }
 
 public class Application : MonoBehaviour
 {
-    public Model model;
-    public View view;
+    public Downloader downloader;
+   // public View view;
     public Controller controller;
     public ConfigModel configModel;
+    public ConfigView configView;
+    //public ImagesController imagesController;
+    public ConfigControllerButtons configControllerButtons;
+    public ConfigStateButtonController configStateButtonController;
+    public ConfigOpener configOpener;
+
 }
 
 
