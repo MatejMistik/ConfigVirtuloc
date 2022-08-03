@@ -32,9 +32,11 @@ public class Downloader : Element
             textHtml.text = "Success " + text;
         });
         */
-
+        int counter = 0;
         foreach (var url in urls)
         {
+            
+            counter++;
             GetTexture(url, (string error) =>
             {
                 Debug.Log("Error " + error);
@@ -44,8 +46,12 @@ public class Downloader : Element
                 Debug.Log("Success ");
                 textHtml.text = "Success ";
                 SaveImageToList(texture2D);
-                Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
-                spriteRenderer.sprite = sprite;
+                if(urls.Length == counter)
+                {
+                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
+                    spriteRenderer.sprite = sprite;
+                }
+                
             });
         }
         

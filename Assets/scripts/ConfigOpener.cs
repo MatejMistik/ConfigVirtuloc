@@ -7,12 +7,11 @@ using TMPro;
 public class ConfigOpener : Element
 {
     
-    public GameObject configuratorGameObject;
+    public GameObject configuratorViewGameObject;
     // Start is called before the first frame update
     void Awake()
-    {
-        configuratorGameObject = GameObject.Find("view/ConfigView");
-        configuratorGameObject.SetActive(false);
+    { 
+        configuratorViewGameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -20,13 +19,15 @@ public class ConfigOpener : Element
     {
         if (Input.GetMouseButtonDown(1))
         {
-            configuratorGameObject.SetActive(true);
+            configuratorViewGameObject.SetActive(true);
+            App.configModel.SaveData();
+            App.imagesController.LoadTransformOfImage();
         }
     }
 
     public void CloseConfig()
     {
-        configuratorGameObject.SetActive(false);
+        configuratorViewGameObject.SetActive(false);
     }
     
 }

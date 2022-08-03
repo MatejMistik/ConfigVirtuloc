@@ -1249,6 +1249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d34949b6df00fb47b66513f6a685d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  configuratorViewGameObject: {fileID: 515707303}
 --- !u!1 &415503500
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,6 +1892,7 @@ GameObject:
   m_Component:
   - component: {fileID: 515707304}
   - component: {fileID: 515707305}
+  - component: {fileID: 515707306}
   m_Layer: 0
   m_Name: ConfigView
   m_TagString: Untagged
@@ -1936,6 +1938,21 @@ MonoBehaviour:
   sliderScaleX: {fileID: 2076887882}
   yScale: {fileID: 942864715}
   sliderScaleY: {fileID: 2093583568}
+--- !u!114 &515707306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515707303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8edbaa008d6b2fd4897820cc8b4d0576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  saveButton: {fileID: 1323276392}
+  deleteButton: {fileID: 1207778841}
+  closeButton: {fileID: 1416175224}
 --- !u!1 &516858276
 GameObject:
   m_ObjectHideFlags: 0
@@ -2976,8 +2993,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1452721223}
   m_HandleRect: {fileID: 1940600116}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -4970,6 +4987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4e9ccc0488b6247ba6c939678e3fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imagesCanvasTransform: {fileID: 1220724854}
 --- !u!1 &1184522467
 GameObject:
   m_ObjectHideFlags: 0
@@ -6393,7 +6411,7 @@ GameObject:
   - component: {fileID: 1416175225}
   - component: {fileID: 1416175224}
   m_Layer: 5
-  m_Name: Button
+  m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6694,8 +6712,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1902959410}
   m_HandleRect: {fileID: 1724893957}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -8873,8 +8891,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1126043085}
   m_HandleRect: {fileID: 152365456}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -8964,8 +8982,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 620532761}
   m_HandleRect: {fileID: 1402649707}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -1
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -9190,8 +9208,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 800859494}
   m_HandleRect: {fileID: 145371983}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -10
+  m_MaxValue: 10
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:

@@ -6,6 +6,9 @@ public class ConfigModel : Element
 {
     // Start Data Save
 
+    public Transform imagesCanvasTransform;
+    private Transform tempImagesCanvasTransform;
+
     private float[] _values;
     public float[] Values
     {
@@ -15,6 +18,11 @@ public class ConfigModel : Element
 
     public void SaveData()
     {
+        tempImagesCanvasTransform = imagesCanvasTransform;
+    }
 
+    public void DeleteData()
+    {
+        imagesCanvasTransform = tempImagesCanvasTransform;
     }
 }

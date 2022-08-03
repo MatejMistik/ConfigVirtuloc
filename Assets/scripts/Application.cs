@@ -12,7 +12,7 @@ public class Application : MonoBehaviour
     public Downloader downloader;
    // public View view;
     public ConfigModel configModel;
-    public ConfigView configView;
+    public ConfigViewPosScale configView;
     public ImagesController imagesController;
     public ConfigControllerButtons configControllerButtons;
     public ConfigStateButtonController configStateButtonController;

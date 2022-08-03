@@ -37,5 +37,16 @@ public class ImagesController : Element
         };
     }
 
+    public void LoadTransformOfImage()
+    {
+        App.configView.sliderPositionX.value = App.configModel.imagesCanvasTransform.position.x;
+        App.configView.sliderPositionY.value = App.configModel.imagesCanvasTransform.position.y;
+        App.configView.sliderPositionZ.value = App.configModel.imagesCanvasTransform.position.z;
+
+        App.configView.sliderScaleX.value = App.configModel.imagesCanvasTransform.localScale.x;
+        App.configView.sliderScaleY.value = App.configModel.imagesCanvasTransform.localScale.y;
+
+    }
+
 
 }
