@@ -14,7 +14,7 @@ public class ConfigViewStateButtons : Element
     {
         saveButton.onClick.AddListener(delegate { App.configStateButtonController.OnClickSaveButton(); });
         deleteButton.onClick.AddListener(delegate { App.configStateButtonController.OnClickDeleteButton(); });
-        closeButton.onClick.AddListener(delegate { App.configOpener.CloseConfig(); });
+        closeButton.onClick.AddListener(delegate { App.configOpener.CloseConfig(); }); // can add delete data or save data on close..
 
     }
 

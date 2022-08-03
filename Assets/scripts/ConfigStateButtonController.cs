@@ -9,8 +9,7 @@ public class ConfigStateButtonController : Element
     public void OnClickSaveButton()
     {
         App.configModel.SaveData();
-
-        
+   
     }
 
     public void OnClickDeleteButton()

@@ -7,7 +7,7 @@ public class ConfigModel : Element
     // Start Data Save
 
     public Transform imagesCanvasTransform;
-    private Transform tempImagesCanvasTransform;
+    private Vector3 tempPosition;
 
     private float[] _values;
     public float[] Values
@@ -18,11 +18,11 @@ public class ConfigModel : Element
 
     public void SaveData()
     {
-        tempImagesCanvasTransform = imagesCanvasTransform;
+        tempPosition = imagesCanvasTransform.position;
     }
 
     public void DeleteData()
     {
-        imagesCanvasTransform = tempImagesCanvasTransform;
+        imagesCanvasTransform.position = tempPosition;
     }
 }
