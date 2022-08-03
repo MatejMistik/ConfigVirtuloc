@@ -12,11 +12,6 @@ public class ImagesController : Element
     public Vector3 beforeSavePos;
 
 
-    public void SaveTransformPos()
-    {
-        Vector3 BeforeSavePositon = canvasTrasnform.position;
-    }
-
     public void ChangePosition(float sliderValue, char token)
     {
 

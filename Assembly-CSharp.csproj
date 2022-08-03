@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\ConfigOpener.cs" />
     <Compile Include="Assets\scripts\ConfigViewPosScale.cs" />
-    <Compile Include="Assets\scripts\View.cs" />
     <Compile Include="Assets\scripts\ConfigModel.cs" />
     <Compile Include="Assets\scripts\Application.cs" />
     <Compile Include="Assets\scripts\ImagesController.cs" />

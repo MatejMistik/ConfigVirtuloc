@@ -12,7 +12,7 @@ public class Downloader : Element
     public SpriteRenderer spriteRenderer;
     public string[] urls = new string[2] { "https://scontent.fbts4-1.fna.fbcdn.net/v/t1.6435-9/163850202_3664637806938635_1747380468099766199_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=X8t4lz8ReEYAX9rhxuY&_nc_ht=scontent.fbts4-1.fna&oh=00_AT-PFeVD0VlTS93HKMN1k9hb-bXx4ulDpPigmqR-DYl0ZA&oe=630F2EB6",
         "https://scontent.fbts4-1.fna.fbcdn.net/v/t39.30808-6/290965714_5054326934636375_2133213513493403742_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=bHSLs6leJaEAX8ReXPf&_nc_ht=scontent.fbts4-1.fna&oh=00_AT9cgq4RV6S6sMPhD6oPcgRFgBrX7DpnwpqucxqOC7VAJg&oe=62ED92E8" };
-    public List<Texture2D> textures = new List<Texture2D>();
+    public List<Texture2D> textures = new();
     public Texture2D[] texture2DArray;
 
     
@@ -57,7 +57,6 @@ public class Downloader : Element
         
     }
 
-    
 
 
     private void GetTexture(string url, Action<string> onError, Action<Texture2D> onSuccess)
@@ -98,18 +97,19 @@ public class Downloader : Element
         texture2DArray = textures.ToArray();
     }
 
-    public void OnLoadImageButtonClick()
+
+    // Future version can rely on loading and saving data.
+
+    /*
+
+
+    private void LoadImageFromDisk(string filename)
     {
-        if (!File.Exists(UnityEngine.Application.persistentDataPath))
+        if (!File.Exists(UnityEngine.Application.persistentDataPath + filename))
         {
             Debug.Log("Error: File not found.");
         }
 
-        LoadImageFromDisk();
-    }
-
-    private void LoadImageFromDisk()
-    {
         byte[] textureBytes = File.ReadAllBytes(UnityEngine.Application.persistentDataPath);
         Texture2D texture2D = new Texture2D(0, 0);
         texture2D.LoadImage(textureBytes);
@@ -125,7 +125,9 @@ public class Downloader : Element
         byte[] textureBytes = downloadHandlerTexture.texture.EncodeToPNG();
         File.WriteAllBytes(UnityEngine.Application.persistentDataPath, textureBytes);
     }
+    */
 
+    
 
     /*
     private void Get(string url, Action<string> onError, Action<string> onSuccess)
