@@ -6,11 +6,12 @@ using TMPro;
 
 public class ConfigOpener : Element
 {
-    private GameObject configuratorGameObject;
+    
+    public GameObject configuratorGameObject;
     // Start is called before the first frame update
     void Awake()
     {
-        configuratorGameObject = GameObject.Find("Configurator");
+        configuratorGameObject = GameObject.Find("view/ConfigView");
         configuratorGameObject.SetActive(false);
     }
 
@@ -27,4 +28,5 @@ public class ConfigOpener : Element
     {
         configuratorGameObject.SetActive(false);
     }
+    
 }

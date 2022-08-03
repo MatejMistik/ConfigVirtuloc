@@ -21,18 +21,16 @@ public class ConfigView : Element
     public TextMeshProUGUI yScale;
     public Slider sliderScaleY;
 
-    public Controller controller;
-
     
 
 
     public void Awake()
     {
-        sliderPositionX.onValueChanged.AddListener(delegate { ValueChangeCheck(xCoordinate, sliderPositionX); controller.ChangePosition(sliderPositionX.value, 'x'); });
-        sliderPositionY.onValueChanged.AddListener(delegate { ValueChangeCheck(yCoordinate, sliderPositionY); controller.ChangePosition(sliderPositionY.value, 'y'); });
-        sliderPositionZ.onValueChanged.AddListener(delegate { ValueChangeCheck(zCoordinate, sliderPositionZ); controller.ChangePosition(sliderPositionZ.value, 'z'); });
-        sliderScaleX.onValueChanged.AddListener(delegate { ValueChangeCheck(xScale, sliderScaleX); controller.ChangeScale(sliderScaleX.value, 'x'); });
-        sliderScaleY.onValueChanged.AddListener(delegate { ValueChangeCheck(yScale, sliderScaleY); controller.ChangeScale(sliderScaleY.value, 'y'); });
+        sliderPositionX.onValueChanged.AddListener(delegate { ValueChangeCheck(xCoordinate, sliderPositionX); App.imagesController.ChangePosition(sliderPositionX.value, 'x'); });
+        sliderPositionY.onValueChanged.AddListener(delegate { ValueChangeCheck(yCoordinate, sliderPositionY); App.imagesController.ChangePosition(sliderPositionY.value, 'y'); });
+        sliderPositionZ.onValueChanged.AddListener(delegate { ValueChangeCheck(zCoordinate, sliderPositionZ); App.imagesController.ChangePosition(sliderPositionZ.value, 'z'); });
+        sliderScaleX.onValueChanged.AddListener(delegate { ValueChangeCheck(xScale, sliderScaleX); App.imagesController.ChangeScale(sliderScaleX.value, 'x'); });
+        sliderScaleY.onValueChanged.AddListener(delegate { ValueChangeCheck(yScale, sliderScaleY); App.imagesController.ChangeScale(sliderScaleY.value, 'y'); });
     }
 
     public void ValueChangeCheck(TextMeshProUGUI text, Slider slider)

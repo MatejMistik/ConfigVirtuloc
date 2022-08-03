@@ -7,7 +7,7 @@ public class ConfigModel : Element
     // Start Data Save
 
     private float[] _values;
-    public float[] values
+    public float[] Values
     {
         get { return _values; }
         set { _values = value; }
