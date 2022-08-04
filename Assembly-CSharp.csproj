@@ -66,7 +66,9 @@
     <Compile Include="Assets\scripts\Downloader.cs" />
     <Compile Include="Assets\scripts\ConfigViewStateButtons.cs" />
     <Compile Include="Assets\scripts\ToggleController.cs" />
-    <Compile Include="Assets\ConfigViewToggle.cs" />
+    <Compile Include="Assets\scripts\ConfigViewToggle.cs" />
+    <Compile Include="Assets\scripts\ImageSwitchController.cs" />
+    <Compile Include="Assets\scripts\ImageSwitchView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -48,10 +48,10 @@ public class Downloader : Element
                 SaveImageToList(texture2D);
                 if(urls.Length == counter)
                 {
-                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero,256);
+                    Sprite sprite = Sprite.Create(texture2D, new Rect(-10, -10, texture2D.width, texture2D.height), Vector2.zero,256);
                     spriteRenderer.sprite = sprite;
                 }
-                
+                if(counter == urls.Length) App.imageSwitchController.GetImages(texture2DArray);
             });
         }
         
@@ -94,6 +94,8 @@ public class Downloader : Element
         texture2DArray = textures.ToArray();
     }
 
+    
+
 
     // Future version can rely on loading and saving data.
 
@@ -124,7 +126,7 @@ public class Downloader : Element
     }
     */
 
-    
+
 
     /*
     private void Get(string url, Action<string> onError, Action<string> onSuccess)

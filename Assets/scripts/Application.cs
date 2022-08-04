@@ -17,6 +17,8 @@ public class Application : MonoBehaviour
     public ConfigStateButtonController configStateButtonController;
     public ConfigOpener configOpener;
     public ConfigViewStateButtons configViewStateButtons;
+    public ImageSwitchView imageSwitchView;
+    public ImageSwitchController imageSwitchController;
 }
 
 

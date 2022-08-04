@@ -15,7 +15,7 @@ public class ConfigModel : Element
     [SerializeField] Slider[] sliders;
 
 
-    private List<float> slidersValuesList = new();
+    private readonly List<float> slidersValuesList = new();
     private float[] sliderValuesArray;
     private float[] _values;
     
