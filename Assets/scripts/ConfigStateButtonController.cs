@@ -11,6 +11,7 @@ public class ConfigStateButtonController : Element
         App.configModel.SaveImageData();
         App.configModel.SaveSlidersData();
         CloseConfig();
+        App.configOpener.imageCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
 
 
     }
@@ -24,6 +25,7 @@ public class ConfigStateButtonController : Element
     public void CloseConfig()
     {
         App.configOpener.configuratorViewGameObject.SetActive(false);
+        App.configOpener.imageCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
     }
 
 }
