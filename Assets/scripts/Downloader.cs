@@ -48,7 +48,7 @@ public class Downloader : Element
                 SaveImageToList(texture2D);
                 if(urls.Length == counter)
                 {
-                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero);
+                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.zero,256);
                     spriteRenderer.sprite = sprite;
                 }
                 
@@ -67,26 +67,23 @@ public class Downloader : Element
 
     private IEnumerator GetTextureCouritine(string url, Action<string> onError, Action<Texture2D> onSuccess)
     {
-        using (UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(url))
+        using UnityWebRequest unityWebRequest = UnityWebRequestTexture.GetTexture(url);
+        yield return unityWebRequest.SendWebRequest();
+
+
+        if (unityWebRequest.result == UnityWebRequest.Result.ConnectionError || unityWebRequest.result == UnityWebRequest.Result.ProtocolError)
         {
-            yield return unityWebRequest.SendWebRequest();
+            //Debug.Log("Error" + unityWebRequest.error);
+            onError(unityWebRequest.error);
+        }
+        else
+        {
+            //Debug.Log("Received" + unityWebRequest.downloadHandler.text);
+            DownloadHandlerTexture downloadHandlerTexture = unityWebRequest.downloadHandler as DownloadHandlerTexture;
+            onSuccess(downloadHandlerTexture.texture);
+            // SaveImageToLocalFiles(downloadHandlerTexture);
 
 
-            if (unityWebRequest.isNetworkError || unityWebRequest.isHttpError)
-            {
-                //Debug.Log("Error" + unityWebRequest.error);
-                onError(unityWebRequest.error);
-            }
-            else
-            {
-                //Debug.Log("Received" + unityWebRequest.downloadHandler.text);
-                DownloadHandlerTexture downloadHandlerTexture = unityWebRequest.downloadHandler as DownloadHandlerTexture;
-                onSuccess(downloadHandlerTexture.texture);
-               // SaveImageToLocalFiles(downloadHandlerTexture);
-                
-
-
-            }
 
         }
     }

@@ -9,7 +9,7 @@ public class ImagesController : Element
 
     //public Transform transformOfSprite;
     public Transform canvasTrasnform;
-    public Vector3 beforeSavePos;
+    //public Vector3 beforeSavePos;
 
 
     public void ChangePosition(float sliderValue, char token)
@@ -32,6 +32,25 @@ public class ImagesController : Element
         };
     }
 
+    public void ChangeRes(float sliderValue, char token)
+    {
+        App.configModel.spriteRenderer.size= token switch
+        {
+            'x' => new Vector2(sliderValue, App.configModel.spriteRenderer.size.y),
+            _ => new Vector2(App.configModel.spriteRenderer.size.x, sliderValue),
+        };
+
+        /*switch (token)
+        {
+            case 'x':
+                canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
+                break;
+            default:
+                canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sliderValue);
+                break;
+        }*/
+    }
+
     public void LoadTransformOfImage()
     {
         App.configView.sliderPositionX.value = App.configModel.imagesCanvasTransform.position.x;
@@ -41,6 +60,8 @@ public class ImagesController : Element
         App.configView.sliderScaleX.value = App.configModel.imagesCanvasTransform.localScale.x;
         App.configView.sliderScaleY.value = App.configModel.imagesCanvasTransform.localScale.y;
 
+        App.configView.sliderResX.value = App.configModel.spriteRenderer.size.x;
+        App.configView.sliderResY.value = App.configModel.spriteRenderer.size.y;
     }
 
 

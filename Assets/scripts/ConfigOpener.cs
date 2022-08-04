@@ -22,6 +22,7 @@ public class ConfigOpener : Element
             configuratorViewGameObject.SetActive(true);
             App.configModel.SaveData();
             App.imagesController.LoadTransformOfImage();
+            
         }
     }
 
