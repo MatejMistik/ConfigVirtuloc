@@ -3247,7 +3247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: X
+  m_text: Y
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6552,6 +6552,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imagesCanvasTransform: {fileID: 1220724854}
   spriteRenderer: {fileID: 1728745350}
+  sliders:
+  - {fileID: 1540618377}
+  - {fileID: 2076887882}
+  - {fileID: 2093583568}
+  - {fileID: 567396651}
+  - {fileID: 567396651}
+  - {fileID: 1859402009}
+  - {fileID: 815385939}
+  - {fileID: 1903699958}
 --- !u!1 &1184522467
 GameObject:
   m_ObjectHideFlags: 0
