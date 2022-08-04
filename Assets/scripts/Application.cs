@@ -16,7 +16,7 @@ public class Application : MonoBehaviour
     public ConfigControllerButtons configControllerButtons;
     public ConfigStateButtonController configStateButtonController;
     public ConfigOpener configOpener;
-
+    public ConfigViewStateButtons configViewStateButtons;
 }
 
 

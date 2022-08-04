@@ -15,7 +15,7 @@ public class ConfigModel : Element
     [SerializeField] Slider[] sliders;
 
 
-    private List<float> slidersValues = new();
+    private List<float> slidersValuesList = new();
     private float[] sliderValuesArray;
     private float[] _values;
     
@@ -35,12 +35,13 @@ public class ConfigModel : Element
 
     public void SaveSlidersData()
     {
+        slidersValuesList.Clear();
         foreach (var slider in sliders)
         {
-            slidersValues.Add(slider.value);
+            slidersValuesList.Add(slider.value);
         }
 
-        sliderValuesArray = slidersValues.ToArray();
+        sliderValuesArray = slidersValuesList.ToArray();
     }
 
     public void DeleteSliderData()

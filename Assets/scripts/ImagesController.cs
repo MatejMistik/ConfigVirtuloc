@@ -10,6 +10,8 @@ public class ImagesController : Element
     //public Transform transformOfSprite;
     public Transform canvasTrasnform;
     //public Vector3 beforeSavePos;
+    public Slider sliderResX;
+    public Slider sliderResY;
 
 
     public void ChangePosition(float sliderValue, char token)
@@ -32,13 +34,24 @@ public class ImagesController : Element
         };
     }
 
-    public void ChangeRes(float sliderValue, char token)
+    public void ChangeRes(float sliderValue, char token, bool toggle)
     {
-        App.configModel.spriteRenderer.size= token switch
-        {
-            'x' => new Vector2(sliderValue, App.configModel.spriteRenderer.size.y),
-            _ => new Vector2(App.configModel.spriteRenderer.size.x, sliderValue),
-        };
+        if (toggle) {
+            App.configModel.spriteRenderer.size = new Vector2(sliderValue, sliderValue);
+
+            // To show value changed on both of the axis simultanoesly
+            sliderResX.value = sliderValue;
+            sliderResY.value = sliderValue;
+            //App.configView.ValueChangeCheck(App.configView.xRes, App.configView.sliderResX);
+            //App.configView.ValueChangeCheck(App.configView.yRes, App.configView.sliderResY);
+        } 
+        else {
+            App.configModel.spriteRenderer.size = token switch
+            {
+                'x' => new Vector2(sliderValue, App.configModel.spriteRenderer.size.y),
+                _ => new Vector2(App.configModel.spriteRenderer.size.x, sliderValue),
+            };
+        }
 
         /*switch (token)
         {

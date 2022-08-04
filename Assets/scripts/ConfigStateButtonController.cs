@@ -10,6 +10,8 @@ public class ConfigStateButtonController : Element
     {
         App.configModel.SaveImageData();
         App.configModel.SaveSlidersData();
+        CloseConfig();
+
 
     }
 
@@ -17,6 +19,11 @@ public class ConfigStateButtonController : Element
     {
         App.configModel.DeleteData();
         App.configModel.DeleteSliderData();
+    }
+
+    public void CloseConfig()
+    {
+        App.configOpener.configuratorViewGameObject.SetActive(false);
     }
 
 }

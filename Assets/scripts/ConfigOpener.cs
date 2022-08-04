@@ -20,16 +20,12 @@ public class ConfigOpener : Element
         if (Input.GetMouseButtonDown(1))
         {
             configuratorViewGameObject.SetActive(true);
-            App.configModel.SaveImageData();
             App.imagesController.LoadTransformOfImage();
+            App.configModel.SaveImageData();
             App.configModel.SaveSlidersData();
 
         }
     }
-
-    public void CloseConfig()
-    {
-        configuratorViewGameObject.SetActive(false);
-    }
+  
     
 }
