@@ -9,6 +9,7 @@ public class ImagesController : Element
 
     //public Transform transformOfSprite;
     public Transform canvasTrasnform;
+    public RectTransform canvas;
     //public Vector3 beforeSavePos;
     public Slider sliderResX;
     public Slider sliderResY;

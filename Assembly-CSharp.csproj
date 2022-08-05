@@ -58,17 +58,20 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\ConfigOpener.cs" />
     <Compile Include="Assets\scripts\ConfigViewPosScale.cs" />
+    <Compile Include="Assets\scripts\ConfigViewToggle.cs" />
     <Compile Include="Assets\scripts\ConfigModel.cs" />
     <Compile Include="Assets\scripts\Application.cs" />
     <Compile Include="Assets\scripts\ImagesController.cs" />
     <Compile Include="Assets\scripts\ConfigStateButtonController.cs" />
     <Compile Include="Assets\scripts\ConfigControllerButtons.cs" />
+    <Compile Include="Assets\scripts\ImageSwitchController.cs" />
     <Compile Include="Assets\scripts\Downloader.cs" />
     <Compile Include="Assets\scripts\ConfigViewStateButtons.cs" />
-    <Compile Include="Assets\scripts\ToggleController.cs" />
-    <Compile Include="Assets\scripts\ConfigViewToggle.cs" />
-    <Compile Include="Assets\scripts\ImageSwitchController.cs" />
     <Compile Include="Assets\scripts\ImageSwitchView.cs" />
+    <Compile Include="Assets\scripts\ToggleController.cs" />
+    <Compile Include="Assets\scripts\DropDownView.cs" />
+    <Compile Include="Assets\DropDownController.cs" />
+    <Compile Include="Assets\scripts\RectTransformExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

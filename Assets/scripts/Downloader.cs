@@ -48,7 +48,7 @@ public class Downloader : Element
                 SaveImageToList(texture2D);
                 if(urls.Length == counter)
                 {
-                    Sprite sprite = Sprite.Create(texture2D, new Rect(-10, -10, texture2D.width, texture2D.height), Vector2.zero,256);
+                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one,256);
                     spriteRenderer.sprite = sprite;
                 }
                 if(counter == urls.Length) App.imageSwitchController.GetImages(texture2DArray);

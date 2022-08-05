@@ -19,6 +19,8 @@ public class Application : MonoBehaviour
     public ConfigViewStateButtons configViewStateButtons;
     public ImageSwitchView imageSwitchView;
     public ImageSwitchController imageSwitchController;
+    public DropDownController dropDownController;
+    public DropDownView dropDownView;
 }
 
 
