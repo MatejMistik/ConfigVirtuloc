@@ -5,14 +5,11 @@ using UnityEngine.UI;
 
 public class ImageSwitchView : Element
 {
-    public Button buttonLeft;
-    public Button buttonRight;
-
-
+    
     private void Awake()
     {
-        buttonLeft.onClick.AddListener(delegate { TaskOnClickLeft(); });
-        buttonRight.onClick.AddListener(delegate { TaskOnClickRight(); });
+        App.imagesModel.buttonLeft.onClick.AddListener(delegate { TaskOnClickLeft(); });
+        App.imagesModel.buttonRight.onClick.AddListener(delegate { TaskOnClickRight(); });
     }
 
     public void TaskOnClickLeft()

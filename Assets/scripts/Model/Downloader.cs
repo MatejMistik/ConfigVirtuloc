@@ -8,9 +8,8 @@ using UnityEngine.UI;
 public class Downloader : Element
 {
 
-    public Text textHtml;
-    public RawImage image;
-    [SerializeField] string[] urls = new string[5] {"","","","","",};
+    //public Text textHtml;
+    [SerializeField] string[] urls = new string[5];
     public List<Texture2D> textures = new();
     public Texture2D[] texture2DArray;
 
@@ -39,15 +38,15 @@ public class Downloader : Element
             GetTexture(url, (string error) =>
             {
                 Debug.Log("Error " + error);
-                textHtml.text = "Error " + error;
+                //textHtml.text = "Error " + error;
             }, (Texture2D texture2D) =>
             {
                 Debug.Log("Success ");
-                textHtml.text = "Success ";
+                //textHtml.text = "Success ";
                 SaveImageToList(texture2D);
                 if(urls.Length == counter)
-                { 
-                    image.texture = texture2D;
+                {
+                    App.imagesModel.rawImage.texture = texture2D;
                 }
                 if(counter == urls.Length) App.imageSwitchController.GetImages(texture2DArray);
             });

@@ -21,6 +21,7 @@ public class Application : MonoBehaviour
     public ImageSwitchController imageSwitchController;
     public DropDownController dropDownController;
     public DropDownView dropDownView;
+    public ImagesModel imagesModel;
 }
 
 

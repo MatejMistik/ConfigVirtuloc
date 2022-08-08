@@ -6,10 +6,10 @@ using TMPro;
 
 public class ConfigOpener : Element
 {
-    public Canvas imageCanvas;
+    
     public GameObject configuratorViewGameObject;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     { 
         configuratorViewGameObject.SetActive(false);
     }
@@ -23,7 +23,7 @@ public class ConfigOpener : Element
             App.imagesController.LoadTransformOfImage();
             App.configModel.SaveImageData();
             App.configModel.SaveSlidersData();
-            imageCanvas.renderMode = RenderMode.WorldSpace;
+            App.imagesModel.imageCanvas.renderMode = RenderMode.WorldSpace;
 
         }
     }

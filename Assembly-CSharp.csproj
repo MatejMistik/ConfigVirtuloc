@@ -57,21 +57,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\ConfigOpener.cs" />
-    <Compile Include="Assets\scripts\ConfigViewPosScale.cs" />
-    <Compile Include="Assets\DropDownController.cs" />
-    <Compile Include="Assets\scripts\ConfigViewToggle.cs" />
-    <Compile Include="Assets\scripts\ConfigModel.cs" />
+    <Compile Include="Assets\scripts\Model\ConfigModel.cs" />
     <Compile Include="Assets\scripts\Application.cs" />
-    <Compile Include="Assets\scripts\ImagesController.cs" />
-    <Compile Include="Assets\scripts\ConfigStateButtonController.cs" />
-    <Compile Include="Assets\scripts\ConfigControllerButtons.cs" />
-    <Compile Include="Assets\scripts\DropDownView.cs" />
     <Compile Include="Assets\scripts\RectTransformExtensions.cs" />
-    <Compile Include="Assets\scripts\ImageSwitchController.cs" />
-    <Compile Include="Assets\scripts\Downloader.cs" />
-    <Compile Include="Assets\scripts\ConfigViewStateButtons.cs" />
-    <Compile Include="Assets\scripts\ImageSwitchView.cs" />
-    <Compile Include="Assets\scripts\ToggleController.cs" />
+    <Compile Include="Assets\scripts\Model\Downloader.cs" />
+    <Compile Include="Assets\scripts\Controller\DropDownController.cs" />
+    <Compile Include="Assets\scripts\Controller\ImageSwitchController.cs" />
+    <Compile Include="Assets\scripts\View\ConfigViewStateButtons.cs" />
+    <Compile Include="Assets\scripts\Model\ImagesModel.cs" />
+    <Compile Include="Assets\scripts\Controller\ImagesController.cs" />
+    <Compile Include="Assets\scripts\View\ConfigViewPosScale.cs" />
+    <Compile Include="Assets\scripts\Controller\ConfigStateButtonController.cs" />
+    <Compile Include="Assets\scripts\Controller\ConfigControllerButtons.cs" />
+    <Compile Include="Assets\scripts\View\DropDownView.cs" />
+    <Compile Include="Assets\scripts\View\ImageSwitchView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
