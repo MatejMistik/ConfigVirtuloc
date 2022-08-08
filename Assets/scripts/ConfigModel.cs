@@ -8,10 +8,12 @@ public class ConfigModel : Element
     // Start Data Save
     // could be done with single GameObject reference
     public Transform imagesCanvasTransform;
-    public SpriteRenderer spriteRenderer;
+    public RawImage rawImage;
     private Vector3 tempPosition;
     private Vector3 tempScale;
-    private Vector2 tempRes;
+    private int tempResX;
+    private int tempResY;
+
     [SerializeField] Slider[] sliders;
 
 
@@ -29,7 +31,9 @@ public class ConfigModel : Element
     {
         tempPosition = imagesCanvasTransform.position;
         tempScale = imagesCanvasTransform.localScale;
-        tempRes = spriteRenderer.size;
+        tempResX = rawImage.texture.width;
+        tempResY = rawImage.texture.height;
+
 
     }
 
@@ -61,6 +65,7 @@ public class ConfigModel : Element
     {
         imagesCanvasTransform.position = tempPosition;
         imagesCanvasTransform.localScale = tempScale;
-        spriteRenderer.size = tempRes;
+        rawImage.texture.width = tempResX ;
+        rawImage.texture.height = tempResY;
     }
 }

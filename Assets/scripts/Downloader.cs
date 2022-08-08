@@ -9,9 +9,8 @@ public class Downloader : Element
 {
 
     public Text textHtml;
-    public SpriteRenderer spriteRenderer;
-    public string[] urls = new string[2] { "https://scontent.fbts4-1.fna.fbcdn.net/v/t1.6435-9/163850202_3664637806938635_1747380468099766199_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=X8t4lz8ReEYAX9rhxuY&_nc_ht=scontent.fbts4-1.fna&oh=00_AT-PFeVD0VlTS93HKMN1k9hb-bXx4ulDpPigmqR-DYl0ZA&oe=630F2EB6",
-        "https://scontent.fbts4-1.fna.fbcdn.net/v/t39.30808-6/290965714_5054326934636375_2133213513493403742_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=bHSLs6leJaEAX8ReXPf&_nc_ht=scontent.fbts4-1.fna&oh=00_AT9cgq4RV6S6sMPhD6oPcgRFgBrX7DpnwpqucxqOC7VAJg&oe=62ED92E8" };
+    public RawImage image;
+    [SerializeField] string[] urls = new string[5] {"","","","","",};
     public List<Texture2D> textures = new();
     public Texture2D[] texture2DArray;
 
@@ -47,9 +46,8 @@ public class Downloader : Element
                 textHtml.text = "Success ";
                 SaveImageToList(texture2D);
                 if(urls.Length == counter)
-                {
-                    Sprite sprite = Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), Vector2.one,256);
-                    spriteRenderer.sprite = sprite;
+                { 
+                    image.texture = texture2D;
                 }
                 if(counter == urls.Length) App.imageSwitchController.GetImages(texture2DArray);
             });

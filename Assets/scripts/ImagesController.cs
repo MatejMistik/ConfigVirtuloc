@@ -9,7 +9,7 @@ public class ImagesController : Element
 
     //public Transform transformOfSprite;
     public Transform canvasTrasnform;
-    public RectTransform canvas;
+    public RectTransform canvasRectTransform;
     //public Vector3 beforeSavePos;
     public Slider sliderResX;
     public Slider sliderResY;
@@ -37,8 +37,10 @@ public class ImagesController : Element
 
     public void ChangeRes(float sliderValue, char token, bool toggle)
     {
+        
         if (toggle) {
-            App.configModel.spriteRenderer.size = new Vector2(sliderValue, sliderValue);
+            canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
+            canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sliderValue);
 
             // To show value changed on both of the axis simultanoesly
             sliderResX.value = sliderValue;
@@ -47,23 +49,22 @@ public class ImagesController : Element
             //App.configView.ValueChangeCheck(App.configView.yRes, App.configView.sliderResY);
         } 
         else {
-            App.configModel.spriteRenderer.size = token switch
+            switch (token)
             {
-                'x' => new Vector2(sliderValue, App.configModel.spriteRenderer.size.y),
-                _ => new Vector2(App.configModel.spriteRenderer.size.x, sliderValue),
-            };
+                case 'x':
+                    canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
+                    break;
+                default:
+                    canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sliderValue);
+                    break;
+            }
         }
+        
 
-        /*switch (token)
-        {
-            case 'x':
-                canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
-                break;
-            default:
-                canvasRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sliderValue);
-                break;
-        }*/
+        
     }
+
+
 
     public void LoadTransformOfImage()
     {
@@ -74,8 +75,8 @@ public class ImagesController : Element
         App.configView.sliderScaleX.value = App.configModel.imagesCanvasTransform.localScale.x;
         App.configView.sliderScaleY.value = App.configModel.imagesCanvasTransform.localScale.y;
 
-        App.configView.sliderResX.value = App.configModel.spriteRenderer.size.x;
-        App.configView.sliderResY.value = App.configModel.spriteRenderer.size.y;
+        App.configView.sliderResX.value = App.configModel.rawImage.texture.width;
+        App.configView.sliderResY.value = App.configModel.rawImage.texture.height;
     }
 
 
