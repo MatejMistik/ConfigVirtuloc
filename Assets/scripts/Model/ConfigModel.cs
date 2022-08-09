@@ -7,17 +7,7 @@ using TMPro;
 public class ConfigModel : Element
 {
     // Start Data Save
-    // could be done with single GameObject reference
-    private Vector3 tempPosition;
-    private Vector3 tempScale;
-    private int tempResX;
-    private int tempResY;
-
-    [SerializeField] Slider[] sliders;
-
-
-    private readonly List<float> slidersValuesList = new();
-    private float[] sliderValuesArray;
+   
 
     // Sliders 
 
@@ -83,45 +73,5 @@ public class ConfigModel : Element
 
     public TMP_Dropdown dropdown;
 
-    public void SaveImageData()
-    {
-        tempPosition = App.imagesModel.canvasTransform.position;
-        tempScale = App.imagesModel.canvasTransform.localScale;
-        tempResX = App.imagesModel.rawImage.texture.width;
-        tempResY = App.imagesModel.rawImage.texture.height;
-
-    }
-
     
-
-    public void SaveSlidersData()
-    {
-        slidersValuesList.Clear();
-        foreach (var slider in sliders)
-        {
-            slidersValuesList.Add(slider.value);
-        }
-
-        sliderValuesArray = slidersValuesList.ToArray();
-    }
-
-    public void DeleteSliderData()
-    {
-        int i = 0;
-        foreach (var slider in sliders)
-        {
-            slider.value = sliderValuesArray[i];
-            i++;
-        }
-        
-    }
-
-    // Deletes temporarily data that was made during opened config window
-    public void DeleteData()
-    {
-        App.imagesModel.canvasTransform.position = tempPosition;
-        App.imagesModel.canvasTransform.localScale = tempScale;
-        App.imagesModel.rawImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal,tempResX);
-        App.imagesModel.rawImage.rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, tempResY);
-    }
 }

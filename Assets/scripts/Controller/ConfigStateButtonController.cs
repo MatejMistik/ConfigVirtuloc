@@ -7,8 +7,8 @@ public class ConfigStateButtonController : Element
 
     public void OnClickSaveButton()
     {
-        App.configModel.SaveImageData();
-        App.configModel.SaveSlidersData();
+        App.dataHandlerController.SaveImageData();
+        App.dataHandlerController.SaveSlidersData();
         //SaveImageRes();
         CloseConfig();
 
@@ -18,8 +18,8 @@ public class ConfigStateButtonController : Element
 
     public void OnClickDeleteButton()
     {
-        App.configModel.DeleteData();
-        App.configModel.DeleteSliderData();
+        App.dataHandlerController.DeleteData();
+        App.dataHandlerController.DeleteSliderData();
     }
 
     public void CloseConfig()

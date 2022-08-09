@@ -71,6 +71,7 @@
     <Compile Include="Assets\scripts\Controller\ConfigControllerButtons.cs" />
     <Compile Include="Assets\scripts\View\DropDownView.cs" />
     <Compile Include="Assets\scripts\View\ImageSwitchView.cs" />
+    <Compile Include="Assets\scripts\Controller\DataHandlerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -788,6 +788,7 @@ Transform:
   - {fileID: 169799107}
   - {fileID: 255140097}
   - {fileID: 298314700}
+  - {fileID: 1360722905}
   m_Father: {fileID: 1541601045}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2316,7 +2317,7 @@ GameObject:
   - component: {fileID: 298314700}
   - component: {fileID: 298314701}
   m_Layer: 0
-  m_Name: configOpener
+  m_Name: ConfigOpener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7999,15 +8000,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b4e9ccc0488b6247ba6c939678e3fbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sliders:
-  - {fileID: 1540618377}
-  - {fileID: 2076887882}
-  - {fileID: 2093583568}
-  - {fileID: 567396651}
-  - {fileID: 567396651}
-  - {fileID: 1859402009}
-  - {fileID: 815385939}
-  - {fileID: 1903699958}
   xCoordinate: {fileID: 1071261803}
   sliderPositionX: {fileID: 1540618377}
   yCoordinate: {fileID: 769317515}
@@ -9676,6 +9668,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355657280}
   m_CullTransparentMesh: 1
+--- !u!1 &1360722903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1360722905}
+  - component: {fileID: 1360722904}
+  m_Layer: 0
+  m_Name: DataHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1360722904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360722903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c362f599d36ec4fb5ba2e57bbde3bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1360722905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360722903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 104012749}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1360982596
 GameObject:
   m_ObjectHideFlags: 0
@@ -10611,6 +10647,7 @@ MonoBehaviour:
   configOpener: {fileID: 298314701}
   imageSwitchController: {fileID: 169799108}
   dropDownController: {fileID: 255140096}
+  dataHandlerController: {fileID: 1360722904}
   configView: {fileID: 515707305}
   configViewStateButtons: {fileID: 515707306}
   imageSwitchView: {fileID: 1420453325}
@@ -12016,6 +12053,13 @@ MonoBehaviour:
   - {fileID: 417022049}
   - {fileID: 1744769591}
   - {fileID: 474087190}
+  tempPosition: {x: 0, y: 0, z: 0}
+  tempScale: {x: 0, y: 0, z: 0}
+  tempResX: 0
+  tempResY: 0
+  sliders: []
+  slidersValuesList: []
+  sliderValuesArray: []
 --- !u!1 &1859402007
 GameObject:
   m_ObjectHideFlags: 0
@@ -12240,7 +12284,7 @@ GameObject:
   - component: {fileID: 1876712544}
   - component: {fileID: 1876712543}
   m_Layer: 0
-  m_Name: ButtonController
+  m_Name: StateButtonController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

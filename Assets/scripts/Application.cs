@@ -20,6 +20,7 @@ public class Application : MonoBehaviour
     public ConfigOpener configOpener;
     public ImageSwitchController imageSwitchController;
     public DropDownController dropDownController;
+    public DataHandlerController dataHandlerController;
 
     public ConfigViewPosScale configView;
     public ConfigViewStateButtons configViewStateButtons;

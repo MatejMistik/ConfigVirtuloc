@@ -23,8 +23,8 @@ public class ConfigOpener : Element
             configuratorViewGameObject.SetActive(true);
             imagesPanel.SetActive(false);
             App.imagesController.LoadTransformOfImage();
-            App.configModel.SaveImageData();
-            App.configModel.SaveSlidersData();
+            App.dataHandlerController.SaveImageData();
+            App.dataHandlerController.SaveSlidersData();
             App.imagesModel.imageCanvas.renderMode = RenderMode.WorldSpace;
 
         }
