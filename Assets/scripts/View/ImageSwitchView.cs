@@ -10,6 +10,14 @@ public class ImageSwitchView : Element
     {
         App.imagesModel.buttonLeft.onClick.AddListener(delegate { TaskOnClickLeft(); });
         App.imagesModel.buttonRight.onClick.AddListener(delegate { TaskOnClickRight(); });
+        int i = 0;
+        foreach (var item in App.imagesModel.imagesButtons)
+        {
+            int j = i;
+            item.onClick.AddListener(delegate { App.imageSwitchController.DipslayChosenClickBaitAsImage(j); });
+            i++;
+        }
+        
     }
 
     public void TaskOnClickLeft()
@@ -23,5 +31,9 @@ public class ImageSwitchView : Element
         App.imageSwitchController.MoveToImageOnRight();
 
     }
+
+
+    
+
 
 }

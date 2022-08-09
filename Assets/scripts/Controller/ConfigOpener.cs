@@ -8,6 +8,7 @@ public class ConfigOpener : Element
 {
     
     public GameObject configuratorViewGameObject;
+    public GameObject imagesPanel;
     // Start is called before the first frame update
     void Start()
     { 
@@ -20,6 +21,7 @@ public class ConfigOpener : Element
         if (Input.GetMouseButtonDown(1))
         {
             configuratorViewGameObject.SetActive(true);
+            imagesPanel.SetActive(false);
             App.imagesController.LoadTransformOfImage();
             App.configModel.SaveImageData();
             App.configModel.SaveSlidersData();

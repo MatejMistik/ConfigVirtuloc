@@ -11,17 +11,21 @@ public class Application : MonoBehaviour
 {
     public Downloader downloader;
     public ConfigModel configModel;
-    public ConfigViewPosScale configView;
+    public ImagesModel imagesModel;
+
+    
     public ImagesController imagesController;
     public ConfigControllerButtons configControllerButtons;
     public ConfigStateButtonController configStateButtonController;
     public ConfigOpener configOpener;
-    public ConfigViewStateButtons configViewStateButtons;
-    public ImageSwitchView imageSwitchView;
     public ImageSwitchController imageSwitchController;
     public DropDownController dropDownController;
+
+    public ConfigViewPosScale configView;
+    public ConfigViewStateButtons configViewStateButtons;
+    public ImageSwitchView imageSwitchView;
     public DropDownView dropDownView;
-    public ImagesModel imagesModel;
+    
 }
 
 

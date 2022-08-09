@@ -90,8 +90,9 @@ public class ConfigModel : Element
         tempResX = App.imagesModel.rawImage.texture.width;
         tempResY = App.imagesModel.rawImage.texture.height;
 
-
     }
+
+    
 
     public void SaveSlidersData()
     {

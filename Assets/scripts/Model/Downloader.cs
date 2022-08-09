@@ -34,21 +34,25 @@ public class Downloader : Element
         foreach (var url in urls)
         {
             
-            counter++;
+            
+            Debug.Log(counter);
             GetTexture(url, (string error) =>
             {
                 Debug.Log("Error " + error);
                 //textHtml.text = "Error " + error;
+                counter++;
             }, (Texture2D texture2D) =>
             {
                 Debug.Log("Success ");
                 //textHtml.text = "Success ";
                 SaveImageToList(texture2D);
-                if(urls.Length == counter)
+                counter++;
+                if (counter == urls.Length)
                 {
                     App.imagesModel.rawImage.texture = texture2D;
+                    App.imageSwitchController.GetImages(texture2DArray);
+                    App.imageSwitchController.FillClickBaits();
                 }
-                if(counter == urls.Length) App.imageSwitchController.GetImages(texture2DArray);
             });
         }
         

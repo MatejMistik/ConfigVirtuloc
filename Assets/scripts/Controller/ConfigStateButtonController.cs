@@ -9,8 +9,10 @@ public class ConfigStateButtonController : Element
     {
         App.configModel.SaveImageData();
         App.configModel.SaveSlidersData();
+        //SaveImageRes();
         CloseConfig();
-        App.imagesModel.imageCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        //App.imagesModel.imageCanvas.renderMode = RenderMode.ScreenSpaceCamera;
 
     }
 
@@ -23,7 +25,17 @@ public class ConfigStateButtonController : Element
     public void CloseConfig()
     {
         App.configOpener.configuratorViewGameObject.SetActive(false);
-        App.imagesModel.imageCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+        //App.imagesModel.imageCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+    }
+
+    public void SaveImageRes()
+    {
+        var newpixels = App.imageSwitchController.texture2DArray[App.imageSwitchController.i].GetPixels32();
+        App.imageSwitchController.texture2DArray[App.imageSwitchController.i].Reinitialize((int) App.configModel.sliderResX.value, (int) App.configModel.sliderResY.value);
+        App.imageSwitchController.texture2DArray[App.imageSwitchController.i].SetPixels32(newpixels);
+        App.imageSwitchController.texture2DArray[App.imageSwitchController.i].Apply();
+
     }
 
 }

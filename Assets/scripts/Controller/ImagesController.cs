@@ -1,12 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class ImagesController : Element
 {
-
 
     //public Vector3 beforeSavePos;
 
@@ -37,10 +34,11 @@ public class ImagesController : Element
     public void ChangeRes(float sliderValue, char token, bool toggle)
     {
 
-   
+        // toggle is for OneByOne Ration of image
         if (toggle) {
             App.imagesModel.rawImageRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
             App.imagesModel.rawImageRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, sliderValue);
+            // Buttons position depends on resolution of image
             App.imagesModel.buttonLeft.transform.position = new Vector3((-sliderValue / 2f ) - distanceFromImage + worldSpaceAdditionNeeded, App.imagesModel.buttonLeft.transform.position.y, App.imagesModel.buttonLeft.transform.position.z);
             App.imagesModel.buttonRight.transform.position = new Vector3((sliderValue / 2f) + distanceFromImage + worldSpaceAdditionNeeded, App.imagesModel.buttonRight.transform.position.y, App.imagesModel.buttonRight.transform.position.z);
 
@@ -52,7 +50,9 @@ public class ImagesController : Element
             switch (token)
             {
                 case 'x':
+                    // Setting size for X axis
                     App.imagesModel.rawImageRectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, sliderValue);
+                    // Buttons position depends on resolution of image
                     App.imagesModel.buttonLeft.transform.position = new Vector3((-sliderValue / 2f) - distanceFromImage + worldSpaceAdditionNeeded, App.imagesModel.buttonLeft.transform.position.y, App.imagesModel.buttonLeft.transform.position.z);
                     App.imagesModel.buttonRight.transform.position = new Vector3((sliderValue / 2f) + distanceFromImage + worldSpaceAdditionNeeded, App.imagesModel.buttonRight.transform.position.y, App.imagesModel.buttonRight.transform.position.z);
                     break;
@@ -64,7 +64,6 @@ public class ImagesController : Element
         
         
     }
-
 
 
     public void LoadTransformOfImage()
@@ -79,6 +78,8 @@ public class ImagesController : Element
         App.configModel.sliderResX.value = App.imagesModel.rawImage.texture.width;
         App.configModel.sliderResY.value = App.imagesModel.rawImage.texture.height;
     }
+
+
 
 
 }
